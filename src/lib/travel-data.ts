@@ -138,7 +138,12 @@ export const translations = {
       legal: "شركة عيدودي عماد — SARL Colbert Voyage",
     },
   },
-};
+} as const;
+
+export function getTranslations(lang: Lang) {
+  return translations[lang] as (typeof translations)["fr"];
+}
+
 
 export const agencyInfo = {
   name: "Colbert Voyage",
