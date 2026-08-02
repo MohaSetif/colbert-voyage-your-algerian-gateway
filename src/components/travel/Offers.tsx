@@ -1,5 +1,5 @@
 import { Calendar, Clock, Check, Phone, Star } from "lucide-react";
-import { getTranslations, offers, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
+import { getTranslations, offers, primaryPhone, type Lang, whatsappLink } from "@/lib/travel-data";
 
 interface OffersProps {
   lang: Lang;
@@ -100,7 +100,7 @@ export function Offers({ lang }: OffersProps) {
                     <div className="text-xs text-muted-foreground">{offer.priceNote[lang]}</div>
                   </div>
                   <a
-                    href={whatsappLink(agencyInfo.phones[0].number)}
+                    href={whatsappLink(primaryPhone.number)}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"

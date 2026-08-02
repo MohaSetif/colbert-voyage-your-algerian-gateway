@@ -1,5 +1,5 @@
 import { MapPin, ArrowRight, ArrowLeft } from "lucide-react";
-import { getTranslations, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
+import { getTranslations, primaryPhone, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
 import heroCoast from "@/assets/hero-coast.jpg";
 
 interface HeroProps {
@@ -45,7 +45,7 @@ export function Hero({ lang }: HeroProps) {
 
         <div className={`mt-10 flex flex-col items-center gap-4 sm:flex-row ${isAr ? "sm:flex-row-reverse" : ""}`}>
           <a
-            href={whatsappLink(agencyInfo.phones[0].number)}
+            href={whatsappLink(primaryPhone.number)}
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-ocean-300 px-8 py-4 text-base font-bold text-ocean-900 shadow-ocean transition-transform hover:scale-105"

@@ -1,5 +1,5 @@
 import { Phone, MapPin, Mail, MessageCircle, Navigation } from "lucide-react";
-import { getTranslations, agencyInfo, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
+import { getTranslations, agencyInfo, primaryPhone, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
 
 interface ContactProps {
   lang: Lang;
@@ -48,7 +48,7 @@ export function Contact({ lang }: ContactProps) {
             </div>
 
             <a
-              href={whatsappLink(agencyInfo.phones[0].number)}
+              href={whatsappLink(primaryPhone.number)}
               target="_blank"
               rel="noreferrer"
               className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-green-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-green-700"

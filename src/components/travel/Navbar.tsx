@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { agencyInfo, getTranslations, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
+import { agencyInfo, getTranslations, primaryPhone, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
 
 interface NavbarProps {
   lang: Lang;
@@ -64,11 +64,11 @@ export function Navbar({ lang, setLang }: NavbarProps) {
             </button>
           </div>
           <a
-            href={phoneLink(agencyInfo.phones[0].number)}
+            href={phoneLink(primaryPhone.number)}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
             <Phone className="h-4 w-4" />
-            {agencyInfo.phones[0].number}
+            {primaryPhone.number}
           </a>
         </div>
 
@@ -95,7 +95,7 @@ export function Navbar({ lang, setLang }: NavbarProps) {
               </a>
             ))}
             <a
-              href={whatsappLink(agencyInfo.phones[0].number)}
+              href={whatsappLink(primaryPhone.number)}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"

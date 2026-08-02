@@ -76,7 +76,7 @@ export function Footer({ lang }: FooterProps) {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href={phoneLink(agencyInfo.phones[0].number)}
+                href={phoneLink(primaryPhone.number)}
                 className="inline-flex rounded-full bg-primary p-2.5 text-primary-foreground transition-colors hover:bg-primary/90"
                 aria-label="Phone"
               >
