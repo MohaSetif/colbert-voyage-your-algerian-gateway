@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
-import { getTranslations, agencyInfo, type Lang, phoneLink } from "@/lib/travel-data";
+import { getTranslations, agencyInfo, primaryPhone, type Lang, phoneLink } from "@/lib/travel-data";
 
 interface FooterProps {
   lang: Lang;
