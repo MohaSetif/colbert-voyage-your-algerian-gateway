@@ -1,24 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Navbar } from "@/components/travel/Navbar";
+import { Hero } from "@/components/travel/Hero";
+import { Offers } from "@/components/travel/Offers";
+import { WhyUs } from "@/components/travel/WhyUs";
+import { Contact } from "@/components/travel/Contact";
+import { Footer } from "@/components/travel/Footer";
+import type { Lang } from "@/lib/travel-data";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Colbert Voyage — كولبار للسياحة و الأسفار" },
+      {
+        name: "description",
+        content:
+          "Agence de voyage algérienne basée à Aïn Oulmène. Séjours, excursions et voyages organisés en Algérie et en Tunisie. وكالة سياحة جزائرية في عين ولمان، رحلات منظمة إلى تونس وعنابة.",
+      },
+      { property: "og:title", content: "Colbert Voyage — كولبار للسياحة و الأسفار" },
+      {
+        property: "og:description",
+        content: "Voyages organisés en Algérie et Tunisie — رحلات سياحية منظمة في الجزائر وتونس",
+      },
+      { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [lang, setLang] = useState<Lang>("fr");
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar lang={lang} setLang={setLang} />
+      <main>
+        <Hero lang={lang} />
+        <Offers lang={lang} />
+        <WhyUs lang={lang} />
+        <Contact lang={lang} />
+      </main>
+      <Footer lang={lang} />
     </div>
   );
 }
