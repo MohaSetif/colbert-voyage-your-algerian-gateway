@@ -162,7 +162,7 @@ export const agencyInfo = {
   followers: "27K",
 };
 
-export const primaryPhone = agencyInfo.phones[0];
+export const primaryPhone = agencyInfo.phones[0]!;
 
 export const offers = [
   {
