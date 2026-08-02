@@ -77,14 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Colbert Voyage — كولبار للسياحة و الأسفار" },
+      { name: "description", content: "Agence de voyage algérienne spécialisée dans les séjours, excursions et voyages organisés en Algérie et en Tunisie. وكالة سياحة جزائرية متخصصة في الرحلات والسياحة." },
+      { name: "author", content: "Colbert Voyage" },
+      { property: "og:title", content: "Colbert Voyage — كولبار للسياحة و الأسفار" },
+      { property: "og:description", content: "Voyages organisés en Algérie et Tunisie — رحلات سياحية منظمة في الجزائر وتونس" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Colbert Voyage" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@colbertvoyage" },
     ],
     links: [
       {
@@ -92,6 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Urbanist:wght@500;600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -102,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
