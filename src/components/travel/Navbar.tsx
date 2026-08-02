@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { agencyInfo, translations, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
+import { agencyInfo, getTranslations, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
 
 interface NavbarProps {
   lang: Lang;
@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export function Navbar({ lang, setLang }: NavbarProps) {
   const [open, setOpen] = useState(false);
-  const t = translations[lang];
+  const t = getTranslations(lang);
   const isAr = lang === "ar";
 
   const navItems = [

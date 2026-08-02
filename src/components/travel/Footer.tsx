@@ -1,12 +1,12 @@
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
-import { translations, agencyInfo, type Lang, phoneLink } from "@/lib/travel-data";
+import { getTranslations, agencyInfo, type Lang, phoneLink } from "@/lib/travel-data";
 
 interface FooterProps {
   lang: Lang;
 }
 
 export function Footer({ lang }: FooterProps) {
-  const t = translations[lang].footer;
+  const t = getTranslations(lang).footer;
   const isAr = lang === "ar";
 
   return (

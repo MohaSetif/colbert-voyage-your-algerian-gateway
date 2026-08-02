@@ -1,12 +1,12 @@
-import { Calendar, Clock, MapPin, Check, Phone, Star } from "lucide-react";
-import { translations, offers, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
+import { Calendar, Clock, Check, Phone, Star } from "lucide-react";
+import { getTranslations, offers, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
 
 interface OffersProps {
   lang: Lang;
 }
 
 export function Offers({ lang }: OffersProps) {
-  const t = translations[lang].offers;
+  const t = getTranslations(lang).offers;
   const isAr = lang === "ar";
 
   return (

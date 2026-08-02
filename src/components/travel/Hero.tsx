@@ -1,5 +1,5 @@
 import { MapPin, ArrowRight, ArrowLeft } from "lucide-react";
-import { translations, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
+import { getTranslations, type Lang, whatsappLink, agencyInfo } from "@/lib/travel-data";
 import heroCoast from "@/assets/hero-coast.jpg";
 
 interface HeroProps {
@@ -7,7 +7,7 @@ interface HeroProps {
 }
 
 export function Hero({ lang }: HeroProps) {
-  const t = translations[lang].hero;
+  const t = getTranslations(lang).hero;
   const isAr = lang === "ar";
   const Arrow = isAr ? ArrowLeft : ArrowRight;
 

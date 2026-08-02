@@ -1,12 +1,12 @@
 import { Phone, MapPin, Mail, MessageCircle, Navigation } from "lucide-react";
-import { translations, agencyInfo, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
+import { getTranslations, agencyInfo, type Lang, phoneLink, whatsappLink } from "@/lib/travel-data";
 
 interface ContactProps {
   lang: Lang;
 }
 
 export function Contact({ lang }: ContactProps) {
-  const t = translations[lang].contact;
+  const t = getTranslations(lang).contact;
   const isAr = lang === "ar";
 
   return (

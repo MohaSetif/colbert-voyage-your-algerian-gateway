@@ -1,5 +1,5 @@
-import { Bus, Users, BadgePercent, HeartHandshake } from "lucide-react";
-import { translations, type Lang } from "@/lib/travel-data";
+import { Bus, Users, BadgePercent, HeartHandshake, type LucideIcon } from "lucide-react";
+import { getTranslations, type Lang } from "@/lib/travel-data";
 
 const icons = [Bus, Users, BadgePercent, HeartHandshake];
 
@@ -8,7 +8,7 @@ interface WhyUsProps {
 }
 
 export function WhyUs({ lang }: WhyUsProps) {
-  const t = translations[lang].whyUs;
+  const t = getTranslations(lang).whyUs;
   const isAr = lang === "ar";
 
   return (
@@ -32,9 +32,9 @@ export function WhyUs({ lang }: WhyUsProps) {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {t.features.map((feature, i) => {
-            const Icon = icons[i];
-            return (
+            {t.features.map((feature, i) => {
+              const Icon = icons[i] as LucideIcon;
+              return (
               <div
                 key={i}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:bg-white/10"
