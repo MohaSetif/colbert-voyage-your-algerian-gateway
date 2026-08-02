@@ -145,7 +145,7 @@ export function getTranslations(lang: Lang) {
 }
 
 
-export const agencyInfo = {
+export const primaryPhone = agencyInfo.phones[0];
   name: "Colbert Voyage",
   arabicName: "كولبار للسياحة و الأسفار",
   phones: [
