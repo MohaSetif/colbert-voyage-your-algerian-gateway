@@ -43,7 +43,7 @@ export function Offers({ lang }: OffersProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ocean-900/60 to-transparent" />
                 <span
-                  className={`absolute top-4 rounded-full px-3 py-1 text-xs font-bold text-white ${
+                  className={`absolute top-4 pt-2 mx-3 flex items-center justify-center rounded-full px-3 py-1 text-center text-xs font-bold text-white ${
                     offer.badge === "new" ? "bg-ocean-500" : "bg-ocean-700"
                   }`}
                 >
